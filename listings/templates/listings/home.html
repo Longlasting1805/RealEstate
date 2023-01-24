@@ -1,0 +1,22 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h1> Real Estate Listings</h1>
+    <ul>
+        {% for listing in listings %}
+            <li>
+                <h2> {{ listing.title }}</h2>
+                <p> {{ listing.description }}</p>
+                <p>price: ${{ listing.price }}</p>
+                <p>Bedrooms: {{ listing.beedrooms }}</p>
+                <p>Bathrooms: {{ listing.bathrooms }}</p>
+                <p> Square footage{{ listing.sqft }} sqft</p>
+                <img src="{{ listing.photo_main.url}}">
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}    
+
+    
+        
